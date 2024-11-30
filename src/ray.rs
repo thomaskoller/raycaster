@@ -11,6 +11,7 @@ impl Ray {
         Self { origin, direction }
     }
 }
+
 #[cfg(test)]
 mod tests {
     use crate::ray::Ray;
@@ -20,9 +21,9 @@ mod tests {
     fn can_create_ray() {
         let origin = Vector3::new(1.0, 2.0, 3.0);
         let direction = Vector3::new(1.0, 2.0, 3.0);
-        let result = Ray::new(origin.clone(), direction.clone());
+        let ray = Ray::new(origin, direction);
 
-        assert_eq!(result.origin, origin);
-        assert_eq!(result.direction, direction);
+        assert_eq!(ray.origin, origin);
+        assert_eq!(ray.direction, direction);
     }
 }

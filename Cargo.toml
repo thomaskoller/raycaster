@@ -2,5 +2,7 @@
 name = "raycaster"
 version = "0.1.0"
 edition = "2021"
+exclude = ["test_data/*"]
 
 [dependencies]
+

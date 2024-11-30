@@ -1,8 +1,10 @@
+use std::fmt;
+
 #[derive(PartialEq, Copy, Clone, Debug)]
 pub struct Vector3 {
-    x: f64,
-    y: f64,
-    z: f64,
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
 }
 
 impl Vector3 {
@@ -21,6 +23,12 @@ impl Vector3 {
     pub fn normalize(&self) -> Self {
         let len = self.length();
         Self::new(self.x / len, self.y / len, self.z / len)
+    }
+}
+
+impl fmt::Display for Vector3 {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "({}, {}, {})", self.x, self.y, self.z)
     }
 }
 

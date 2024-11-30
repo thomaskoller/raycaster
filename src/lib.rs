@@ -1,4 +1,4 @@
-mod mesh;
-mod ray;
-mod triangle;
-mod vector3;
+pub mod mesh;
+pub mod ray;
+pub mod triangle;
+pub mod vector3;

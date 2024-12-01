@@ -34,7 +34,7 @@ impl fmt::Display for Vector3 {
 
 #[cfg(test)]
 mod tests {
-    use crate::vector3::Vector3;
+    use crate::linalg::vector3::Vector3;
 
     #[test]
     fn can_create_vector() {

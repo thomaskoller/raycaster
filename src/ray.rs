@@ -1,7 +1,7 @@
-use crate::vector3::Vector3;
+use crate::linalg::vector3::Vector3;
 
 #[derive(PartialEq, Copy, Clone, Debug)]
-struct Ray {
+pub struct Ray {
     pub origin: Vector3,
     pub direction: Vector3,
 }
@@ -14,8 +14,8 @@ impl Ray {
 
 #[cfg(test)]
 mod tests {
+    use crate::linalg::vector3::Vector3;
     use crate::ray::Ray;
-    use crate::vector3::Vector3;
 
     #[test]
     fn can_create_ray() {

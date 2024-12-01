@@ -1,5 +1,8 @@
-use crate::vector3::Vector3;
+use crate::linalg::vector3::Vector3;
+use crate::ray::Ray;
 use std::fmt;
+use std::io::Error;
+use std::io::ErrorKind::Other;
 
 #[derive(PartialEq, Copy, Clone, Debug)]
 pub struct Triangle {
@@ -22,8 +25,8 @@ impl fmt::Display for Triangle {
 
 #[cfg(test)]
 mod tests {
+    use crate::linalg::vector3::Vector3;
     use crate::triangle::Triangle;
-    use crate::vector3::Vector3;
 
     #[test]
     fn can_create_triangle() {

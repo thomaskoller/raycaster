@@ -1,5 +1,5 @@
+use crate::linalg::vector3::Vector3;
 use crate::triangle::Triangle;
-use crate::vector3::Vector3;
 use std::fs::File;
 use std::io::ErrorKind::InvalidData;
 use std::io::{BufRead, BufReader, Error};
@@ -21,8 +21,8 @@ impl Mesh {
     }
 
     pub fn load_stl_ascii(file_path: &str) -> Result<Self, Error> {
-        let file = File::open(file_path);
-        let reader = BufReader::new(file?);
+        let file = File::open(file_path)?;
+        let reader = BufReader::new(file);
 
         let mut mesh = Self::new();
         let mut vertices: Vec<Vector3> = Vec::new();
@@ -63,9 +63,9 @@ impl Mesh {
 
 #[cfg(test)]
 mod tests {
+    use crate::linalg::vector3::Vector3;
     use crate::mesh::Mesh;
     use crate::triangle::Triangle;
-    use crate::vector3::Vector3;
 
     #[test]
     fn can_push_triangle_to_mesh() {

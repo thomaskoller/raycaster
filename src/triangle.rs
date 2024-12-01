@@ -1,8 +1,5 @@
 use crate::linalg::vector3::Vector3;
-use crate::ray::Ray;
 use std::fmt;
-use std::io::Error;
-use std::io::ErrorKind::Other;
 
 #[derive(PartialEq, Copy, Clone, Debug)]
 pub struct Triangle {
